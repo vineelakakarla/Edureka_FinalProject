@@ -1,0 +1,31 @@
+{
+  "name": "zomatoapi",
+  "version": "1.0.0",
+  "description": "api of backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vineelakakarla/Edureka_FinalProject.git"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "app",
+    "restaurant"
+  ],
+  "author": "vineela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vineelakakarla/Edureka_FinalProject/issues"
+  },
+  "homepage": "https://github.com/vineelakakarla/Edureka_FinalProject#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.9"
+  }
+}
