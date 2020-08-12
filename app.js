@@ -24,7 +24,6 @@ app.get('/restaurant',(req,res) => {
 })
 
 
-
 app.get('/restaurantdetail/:id',(req,res) => {
     console.log(req.params.id)
     var query = {_id:req.params.id}

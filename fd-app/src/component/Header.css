@@ -1,0 +1,23 @@
+/* Nav bar */
+*{
+  font-family: 'Ubuntu', sans-serif;
+}
+.navbar{
+  background-color:#ff4303;
+}
+.navbar-dark .navbar-toggler {
+  color: rgba(255,255,255,.9);
+  border-color: rgba(255,255,255,.5);
+}
+.brand{
+  font-size: 2rem;
+  font-weight: 500;
+}
+  
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+.nlink{
+  font-weight: 500;
+}
+    

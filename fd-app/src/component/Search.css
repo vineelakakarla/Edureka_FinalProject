@@ -1,0 +1,45 @@
+.imageContainer {
+  background: url('/images/food-wallpaper.png');
+  background-size: cover;
+  padding: 7%;
+}
+.mainText{
+  text-align: center;
+}
+
+.logo{
+  background-color: white;
+  width: 130px;
+  margin: auto;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 50px;
+  color: #ff4301;
+  text-align: center;
+  padding:35px 0;
+  font-family: 'Ubuntu', serif;
+
+}
+
+.heading{
+  font-size: 30px;
+  color: white;
+}
+.locationContainer{
+  padding: 0 20%;
+  margin: 20px 0;
+}
+
+.location{
+  width: 250px;
+  height: 40px;
+  margin-right: 2%;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.searchInput{
+ border: 1px solid;
+ border-radius: 0 25px 25px 0;
+ }
+
