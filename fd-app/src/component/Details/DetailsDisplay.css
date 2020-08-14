@@ -1,0 +1,29 @@
+.RestData{
+    margin-top: 20px;
+    padding: 20px;
+    border:1px solid wheat;
+    box-shadow: 2px 2px 4px grey;
+    
+}
+.restImg{
+    width: 30%;
+    float: left;
+    height: 120px;;
+}
+
+.restDet{
+    width: 70%;
+    float: left;
+    padding-left: 10px;
+}
+
+.restImage{
+    width: 80px;
+    height:80px;
+    border-radius: 20px;
+    
+}
+.txtHead {
+    color: gray;
+    font-size: 2px;
+}

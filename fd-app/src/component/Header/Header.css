@@ -1,9 +1,9 @@
 /* Nav bar */
 *{
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .navbar{
-  background-color:#ff4303;
+  background-color: #ce0505;
 }
 .navbar-dark .navbar-toggler {
   color: rgba(255,255,255,.9);

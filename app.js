@@ -52,7 +52,6 @@ app.get('/restaurantHome', (req, res)=> {
 })
 
 app.get('/restaurantdetails/:id',(req,res) => {
-    console.log(req.params.id)
     var query = {_id:req.params.id}
     db.collection('restaurant').find(query).toArray((err,result) => {
         if(err) throw err;
@@ -64,24 +63,24 @@ app.get('/restaurantlist/:city/:mealtype',(req,res) => {
     var query = {}
     var sort = {cost:1}
     if(req.query.cuisine && req.query.lcost && req.query.hcost && req.query.sort){
-        query = {city:req.params.city,"type.mealtype": req.params.mealtype,"Cuisine.cuisine":req.query.cuisine,cost:{$gt:parseInt(req.query.hcost),$lt:parseInt(req.query.lcost)}}
+        query = {city:req.params.city,"type.mealtype": req.params.mealtype,"Cuisine.cuisine":req.query.cuisine,cost:{$lt:parseInt(req.query.hcost),$gt:parseInt(req.query.lcost)}}
         sort={cost:parseInt(req.query.sort)} 
     }
     else if(req.query.cuisine&&req.query.lcost && req.query.hcost){
-        query = {city:req.params.city,"type.mealtype": req.params.mealtype,"Cuisine.cuisine":req.query.cuisine,cost:{$gt:parseInt(req.query.hcost),$lt:parseInt(req.query.lcost)}}
+        query = {city:req.params.city,"type.mealtype": req.params.mealtype,"Cuisine.cuisine":req.query.cuisine,cost:{$lt:parseInt(req.query.hcost),$gt:parseInt(req.query.lcost)}}
     }
     else if(req.query.cuisine&&req.query.sort){
         query = {city:req.params.city,"type.mealtype": req.params.mealtype,"Cuisine.cuisine":req.query.cuisine}
         sort={cost:parseInt(req.query.sort)} 
     }
     else if(req.query.lcost && req.query.hcost&&req.query.sort){
-        query = {city:req.params.city,"type.mealtype": req.params.mealtype,cost:{$gt:parseInt(req.query.hcost),$lt:parseInt(req.query.lcost)}}
+        query = {city:req.params.city,"type.mealtype": req.params.mealtype,cost:{$lt:parseInt(req.query.hcost),$gt:parseInt(req.query.lcost)}}
         sort={cost:parseInt(req.query.sort)} 
     }
     else if(req.query.cuisine){
         query = {city:req.params.city,"type.mealtype": req.params.mealtype,"Cuisine.cuisine":req.query.cuisine} 
     }else if(req.query.lcost && req.query.hcost){
-        query={city:req.params.city,"type.mealtype": req.params.mealtype,cost:{$gt:parseInt(req.query.hcost),$lt:parseInt(req.query.lcost)}}
+        query={city:req.params.city,"type.mealtype": req.params.mealtype,cost:{$lt:parseInt(req.query.hcost),$gt:parseInt(req.query.lcost)}}
     }else if(req.query.sort){
         query={city:req.params.city,"type.mealtype": req.params.mealtype}
         sort={cost:parseInt(req.query.sort)}
@@ -121,7 +120,7 @@ app.get('/mealtype',(req,res) => {
 })
 
 MongoClient.connect(mongoUrl,(err,client) => {
-    if(err) console.log(err)
+    if(err) throw err
     db= client.db('restaurant_Project');
     app.listen(port,(err) => {
         if(err) throw err;

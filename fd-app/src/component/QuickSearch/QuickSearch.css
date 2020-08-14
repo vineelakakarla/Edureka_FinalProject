@@ -1,3 +1,6 @@
+*{
+  font-family: 'Poppins', serif;
+}
 .QSContainer{
   margin:0 5% 2%;
 }
@@ -6,26 +9,26 @@
   color: grey;
 }
 .QShead{
-  color: #ff4301;
+  color: #192f60;
   margin-top: 10px;
+  font-size: bolder;
 }
 .compHead{
-  color: #e84a5f;
+  color: #192f60;
 }
 .QSCol{
   padding:15px;
 }
 .component{
   height: 120px;
-  box-shadow: 0 4px 6px 2px grey;
-  border-radius: 10px;
+  box-shadow: -4px 4px 6px 2px grey;
+ 
 }
 
 img{
   width: 100%;
   height:120px;
-  border-radius: 10px 0 0 10px ;
-}
+} 
 
 .QSimg{
   float: left;

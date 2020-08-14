@@ -1,10 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {BrowserRouter} from 'react-router-dom';
+import Search from './Search/Search';
+import QuickSearch from './QuickSearch/QuickSearch';
 
 const Home =() => {
     return(
-        <div>
-            
+    <BrowserRouter>
+        <div>           
+            <Search/>
+            <QuickSearch/>
         </div>
+    </BrowserRouter>
     )
 }
+export default Home;
