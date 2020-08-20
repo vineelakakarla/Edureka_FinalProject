@@ -7,25 +7,32 @@ import './Details.css';
 
 
 const detailsUrl = "http://localhost:8900/restaurantlist";
+const restdetailUrl = "http://localhost:8900/restaurantlist";
 
 class Details extends Component {
 
     constructor(props) {
         super(props)
+
         this.state = {
             restData: ""
         }
 
     }
 
+   
     setDataPerCuisine(data) {
+       
         this.setState({restData:data})
     }
-    setDataPerCost(data) {
-        this.setState({restData:data}) 
-   }
-    setDataPerSort(data) {
+    setDataPerCost(data1, data2) {
+      
         this.setState({restData:data})
+    }
+    setDataPerSort = (data) => {
+
+        this.setState({restData:data})
+       
         
    }
 
@@ -35,9 +42,9 @@ class Details extends Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-3 filtercontainer">
-                        <CusineFilter filterByCuisine={(data)=> { this.setDataPerCuisine(data)}}/>
-                        <CostFilter filterByCost = {(data) => {this.setDataPerCost(data)}}/>
-                        <Sort filterBySort= {(data) => {this.setDataPerSort(data)}}/>
+                        <CusineFilter filterByCuisine={(data)=> { this.setDataPerCuisine(cusineId)}}/>
+                        <CostFilter filterByCost = {(hcost, lcost) => {this.setDataPerCost(hcost, lcost)}}/>
+                        <Sort filterBySort= {(sort) => {this.setDataPerSort(sort)}}/>
                         
                     </div>
                     <div className="col-md-9">
@@ -54,11 +61,15 @@ class Details extends Component {
         var mealid = parseInt(this.props.match.params.mealtype);
         sessionStorage.setItem("meal", this.props.match.params.mealtype);
         var cityid = sessionStorage.getItem("city");
-        fetch(`${detailsUrl}/${cityid}/${mealid}`, { method: 'GET' })
+        
+        let url = `${detailsUrl}/${cityid}/${mealid}`;
+       
+        fetch(url, { method: 'GET' })
             .then(res => res.json())
             .then(data => {
                 this.setState({ restData: data })
             })
+        
     }
 }
 

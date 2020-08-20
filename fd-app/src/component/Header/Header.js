@@ -20,15 +20,6 @@ const Header =() => {
             <li className="nav-item">
               <Link to="/" className="nav-link nlink">Home</Link>
             </li>
-            <li className="nav-item">
-              <Link to="/Contact" className="nav-link nlink">Contact</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/About" className="nav-link nlink">About</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/Download" className="nav-link nlink">Download</Link>
-            </li>
           </ul>
 
           <ul className="nav navbar-nav ml-auto">

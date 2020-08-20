@@ -1,0 +1,52 @@
+*{
+  font-family: 'Poppins', serif;
+}
+.RestData{
+    margin-top: 20px;
+    padding: 2%;
+    border:1px solid wheat;
+    box-shadow: 2px 2px 4px grey;
+    
+}
+.restImg{
+    width: 30%;
+    float: left;
+    height: 150px;;
+}
+
+.restDet{
+    width: 70%;
+    float: left;
+    padding-left: 10px;
+}
+
+.restImage{
+    width: 130px;
+    height:130px;
+    border-radius: 20px;
+    
+}
+.txtHead {
+    color: gray;
+    font-size: 2px;
+}
+.RestTitle{
+  color: #192f60;
+  font-size: 30px;
+  line-height: 46px;
+  font-weight: 600;
+}
+
+.RestTitle:hover{
+    text-decoration: none;
+}
+
+.resttxt{
+    font-size: 1rem;
+    color:gray;
+}
+
+hr{
+    border:none;
+    border-top: 1px solid #888888;
+}

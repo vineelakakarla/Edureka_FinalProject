@@ -1,0 +1,16 @@
+*{
+  font-family: 'Poppins', serif;
+}
+
+.filtercontainer {
+  box-shadow: 2px 2px 4px gray;
+  margin: 0 30px;
+  padding: 20px;
+}
+
+.content {
+  padding: 20px;
+}
+.paginate {
+  padding: 1% 45%;
+}

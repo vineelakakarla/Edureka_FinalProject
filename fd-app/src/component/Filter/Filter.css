@@ -1,3 +1,11 @@
+*{
+  font-family: 'Poppins', serif;
+}
+
 .filter{
     padding:20px;
+}
+
+.filterItem{
+    color: gray;
 }

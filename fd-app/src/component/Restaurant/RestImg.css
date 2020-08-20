@@ -1,18 +1,14 @@
+*{
+  font-family: 'Poppins', serif;
+}
 
 /* MainContainer */
 .mainContainer {
- margin: 50px;
+ margin: 5% 10%;
 }
 
-.img{
-  background-image: url('/images/ass1.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-bottom: 5%;
-  }
-
 .col-12{
-  height: 350px;
+  height: 450px;
 }
 
 .gallery{
@@ -27,7 +23,7 @@
   padding: 10px;
   padding-bottom: 10px;
   margin-right:30px;
-  margin-top: 250px;
+  margin-top: 350px;
 
 }
 .img_link {

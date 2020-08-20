@@ -5,8 +5,12 @@ const mongo = require('mongodb');
 const MongoClient = mongo.MongoClient;
 const mongoUrl = "mongodb://localhost:27017"
 var cors = require('cors');
+const bodyParser = require('body-parser');
 let db;
 app.use(cors());
+
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json())
 
 app.get('/',(req, res) => {
     db.collection('restaurant').find().toArray((err,result) => {
@@ -116,6 +120,22 @@ app.get('/mealtype',(req,res) => {
     db.collection('mealtype').find({}).toArray((err,result) => {
         if(err) throw err;
         res.send(result)
+    })
+})
+
+//Orders data
+app.get('/orders', (req, res) => {
+    db.collection('orders').find({}).toArray((err,result) => {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
+//Place an order
+app.post('/placeorder', (req,res)=> {
+    db.collection('orders').insert(req.body, (err, result)=>{
+        if(err) throw err;
+        res.send("Data Added");
     })
 })
 

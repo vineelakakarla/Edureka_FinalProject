@@ -15,7 +15,7 @@ class RestData extends Component{
         
         return (
             <div>
-                <RestImg/>
+                <RestImg restData={this.state.restData}/>
                 <RestDetails restData={this.state.restData}/>
             </div>
         )
