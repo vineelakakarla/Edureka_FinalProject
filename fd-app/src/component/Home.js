@@ -7,19 +7,22 @@ const loctnUrl = "http://localhost:8900/location";
 
 
 class Home extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state={
             location:"",
             mealData:""
 
         }
     }
+    setrestId = (data) => {
+        this.props.history.push(`/rest/${Number(data)}`);
+    }
     render() {
         return (
             <div>           
-                <Search location={this.state.location}/>
-                <QuickSearch mealData={this.state.mealData}/>
+                <Search location ={this.state.location} restid = {(data) => this.setrestId(data)}/>
+                <QuickSearch mealData ={this.state.mealData}/>
             </div>
         )
     }
@@ -33,6 +36,8 @@ class Home extends Component {
 
             }
         )
+
+
         fetch(mealUrl, { method: 'GET' })
             .then((res) => res.json())
             .then((data) => {

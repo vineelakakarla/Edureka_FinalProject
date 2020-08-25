@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './Filter.css';
-const restdetailUrl = "http://localhost:8900/restaurantlist";
-var restUrl;
 
 class CostFilter extends Component {
 
@@ -9,28 +7,17 @@ class CostFilter extends Component {
         
         let hcost = "", lcost="";
         var costvalues = event.target.value.split(",");
-                
-        // let cityId = sessionStorage.getItem("city");
-        // let mealId = sessionStorage.getItem("meal");
-        // let lcost, hcost;
-    
+            
         if (costvalues[1] == null) {
             hcost = costvalues[0];
-            // restUrl = `${restdetailUrl}/${cityId}/${mealId}?hcost=${hcost}`;
         }
 
         else {
             lcost = costvalues[0];
             hcost = costvalues[1];
-        //     restUrl = `${restdetailUrl}/${cityId}/${mealId}?hcost=${hcost}&lcost=${lcost}`;
         }
        
         {this.props.filterByCost(hcost, lcost)}
-        
-        // fetch(restUrl, {method:'GET'})
-        // .then(res => res.json())
-        // .then(data => this.props.filterByCost(data))
-
 
 
     }

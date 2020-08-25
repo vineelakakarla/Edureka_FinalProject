@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import './QuickSearch.css'
-const mealUrl = "http://localhost:8900/mealtype";
-
 
 class QuickSearch extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             mealData: ""
         }

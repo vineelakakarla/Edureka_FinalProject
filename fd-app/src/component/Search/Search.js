@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import './Search.css'
-const loctnUrl = "http://localhost:8900/location";
 const restUrl = "http://localhost:8900/restauranthome?city=";
 class Search extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            location: '',
             city: '',
             restaurant: ''
         }
@@ -31,14 +29,14 @@ class Search extends Component {
     }
 
     restHandler = (event) => {
-        this.props.history.push(`/rest/${Number(event.target.value)}`);
+        {this.props.restid(event.target.value)}
     }
 
     renderLocation = (locdata) => {
         if (locdata) {
             return locdata.map((item) => {
                 return (
-                    <option value={item.city}>
+                    <option value = {item.city} >
                         {item.name}
                     </option>
                 )
@@ -50,8 +48,7 @@ class Search extends Component {
         if (restdata) {
             return restdata.map((item) => {
                 return (
-                    <option value ={item._id}>
-                        
+                    <option value ={item._id}>  
                         {item.name} |{item.locality}
                     </option>
                 )
@@ -77,8 +74,8 @@ class Search extends Component {
                         <select className="location" onChange={this.cityHandler}>
                             {this.renderLocation(this.props.location)}
                         </select>
-                        {/* <input list="restList" name="rest" id="rest" className="form-control searchInput" type="text" placeholder=" &#xF002; Search by restaurent" style={{ "font-family": "Arial, FontAwesome" }} /> */}
-                        <select id="restList" onChange = {this.restHandler} >
+                        
+                        <select id="restList" onChange = {this.restHandler}>
                             {this.renderRest(this.state.restaurant)}
                         </select>
 

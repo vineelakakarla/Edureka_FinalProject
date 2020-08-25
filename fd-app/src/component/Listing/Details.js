@@ -5,6 +5,7 @@ import CostFilter from '../Filter/CostFilter';
 import Sort from '../Filter/Sort';
 import './Details.css';
 import Paginate from './Paginate';
+import axios from 'axios';
 
 
 const detailsUrl = "http://localhost:8900/restaurantlist";
@@ -17,7 +18,8 @@ class Details extends Component {
             hcost: "",
             lcost: "",
             sort: "1",
-            restData: ""
+            restData: "",
+            cusineData:""
         }
     }
 
@@ -74,12 +76,11 @@ class Details extends Component {
                 <div className="content">
                     <div className="row">
                         <div className = "heading">
-                            {/* <Heading mealid= {} cityId={}></Heading> */}
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-md-3 filtercontainer">
-                            <CusineFilter filterByCuisine={(cusineId) => { this.setDataPerCuisine(cusineId) }} />
+                            <CusineFilter cusineData={this.state.cusineData} filterByCuisine={(cusineId) => { this.setDataPerCuisine(cusineId) }} />
                             <CostFilter filterByCost={(hcost, lcost) => { this.setDataPerCost(hcost, lcost) }} />
                             <Sort filterBySort={(sort) => { this.setDataPerSort(sort) }} />
 
@@ -106,18 +107,17 @@ class Details extends Component {
         var mealid = parseInt(this.props.match.params.mealtype);
         sessionStorage.setItem("meal", mealid);
         var cityid = sessionStorage.getItem("city");
-
         let url = `${detailsUrl}/${cityid}/${mealid}`;
+        let cusineUrl = "http://localhost:8900/cuisine";
 
-        fetch(url, { method: 'GET' })
-            .then(res => res.json())
-            .then(data => {
-                this.setState({ restData: data }, () => {
-                    console.log(this.state.restData)
-                })
-            })
+        axios.get(url)
+        .then((response) => {this.setState({ restData: response.data })})
+
+        axios.get(cusineUrl)
+        .then((response) => {this.setState({cusineData:response.data})})
+        
     }
 
 
-};
+}
 export default Details;

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import RestImg from './RestImg';
 import RestDetails from './RestDetails';
-const restUrl = "http://localhost:8900/restaurantdetails/";
+const restUrl = "http://localhost:8900/restaurantdetail/";
 
 class RestData extends Component{
     constructor(props) {
@@ -31,6 +31,5 @@ class RestData extends Component{
     }
 
 }
-
 
 export default RestData;

@@ -1,14 +1,11 @@
 import React, {Component} from 'react';
 import './Filter.css';
-const url = "http://localhost:8900/cuisine";
+const cusineUrl = "http://localhost:8900/cuisine";
 
 class CusineDisplay extends Component {
 
-    constructor(){
-        super()
-        this.state = {
-            cusineData:""
-        }
+    constructor(props){
+        super(props)
     }
 
     cuisineFilter= (event) => {
@@ -19,7 +16,7 @@ class CusineDisplay extends Component {
         
     }
 
-    renderCusine = (cusineData) => {
+    renderCusine = ({cusineData}) => {
         if(cusineData) {
             return (
                 cusineData.map((item) => {
@@ -47,19 +44,12 @@ class CusineDisplay extends Component {
                         </label>
                     </div>
 
-                    {this.renderCusine(this.state.cusineData)}
+                    {this.renderCusine(this.props)}
                 </div>
             </div>
         )
     }
-
-    componentDidMount(){
-        fetch(url, {method:'GET'})
-        .then(res => res.json())
-        .then(data => {
-            this.setState({cusineData:data})
-        })
-    }
+       
 }
 
 export default CusineDisplay;

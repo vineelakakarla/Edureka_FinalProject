@@ -10,7 +10,11 @@ const RestDetails = (props) => {
     var history = useHistory();
 
     const backButton = (event) => {
-        history.push(`/details/${mealId}`);
+        if(mealId)
+            history.push(`/details/${mealId}`);
+        else
+            history.push('/');
+        
     }
 
     const restaurantData = ({ restData }) => {
