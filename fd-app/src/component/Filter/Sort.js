@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Filter.css';
-const restdetailUrl = "http://localhost:8900/restaurantlist";
 
 
 class Sort extends Component {

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './Filter.css';
-const cusineUrl = "http://localhost:8900/cuisine";
+
 
 class CusineDisplay extends Component {
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Paginate from './Paginate';
 import './DetailsDisplay.css';
 
 const DetailsDisplay = (props) => {

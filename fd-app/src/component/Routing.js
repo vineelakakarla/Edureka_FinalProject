@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter,  Route,  Switch } from 'react-router-dom';
+import {BrowserRouter,  Route} from 'react-router-dom';
 import Header from './Header/Header';
 import Home from './Home';
 import RestData from './Restaurant/RestData';
