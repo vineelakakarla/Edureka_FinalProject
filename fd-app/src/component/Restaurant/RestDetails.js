@@ -10,7 +10,7 @@ const RestDetails = (props) => {
     var history = useHistory();
 
     const backButton = (event) => {
-        if(mealId)
+        if(mealId>0)
             history.push(`/details/${mealId}`);
         else
             history.push('/');

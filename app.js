@@ -19,15 +19,6 @@ app.get('/',(req, res) => {
     })
 })
 //restaurant
-app.get('/restaurant',(req,res) => {
-    var query = {city:req.query.city}
-    db.collection('restaurant').find(query).toArray((err,result) => {
-        if(err) throw err;
-        res.send(result)
-    })
-})
-
-
 app.get('/restaurantdetail/:id',(req,res) => {
     var query = {_id:req.params.id}
     db.collection('restaurant').find(query).toArray((err,result) => {

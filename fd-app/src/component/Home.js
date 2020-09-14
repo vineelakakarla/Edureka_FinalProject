@@ -29,6 +29,7 @@ class Home extends Component {
 
     componentDidMount() {
         sessionStorage.setItem("city", 1);
+        sessionStorage.setItem("meal", 0);
         fetch(loctnUrl, { method: 'GET' })
             .then((res) => res.json())
             .then((data) => {

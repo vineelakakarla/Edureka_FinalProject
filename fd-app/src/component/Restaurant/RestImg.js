@@ -42,19 +42,18 @@ class RestImg extends Component {
             <React.Fragment>
                 <Slider {...settings}>
                     <div >
-                        <img class="img-responsive car-img" src="/images/food1.jpg" alt="First slide" />
+                        <img class="img-responsive car-img" src="https://b.zmtcdn.com/data/pictures/chains/3/6303/640252389ddc3f264dd0e9f2741e73cd.jpg" alt="First slide" />
                     </div>
                     <div>
-                        <img class="img-responsive car-img" src="/images/food2.jpg" alt="Second slide" />
+                        <img class="img-responsive car-img" src="https://b.zmtcdn.com/data/pictures/7/18690357/0df7f4ca0c645a68a1657b1e69b015fa.jpg" alt="Second slide" />
                     </div>
                     <div>
-                        <img class="img-responsive car-img " src="/images/food3.jpg" alt="Third slide" />
+                        <img class="img-responsive car-img " src="https://b.zmtcdn.com/data/res_imagery/6508401_RESTAURANT_21a925c42f2f93c9709e1945b9eae56f.jpg" alt="Third slide" />
                     </div>
                     <div>
-                        <img class="img-responsive car-img " src="/images/food4.jpg" alt="Foyrth slide" />
+                        <img class="img-responsive car-img " src="https://b.zmtcdn.com/data/pictures/1/50471/bcf68da39dcfb0fe5bcfb742c337385e.jpg" alt="Forth slide" />
                     </div>
                 </Slider>
-
             </React.Fragment>
         )
     }
