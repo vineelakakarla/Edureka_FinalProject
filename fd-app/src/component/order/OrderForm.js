@@ -95,7 +95,7 @@ class OrderForm extends Component {
 
 
     componentDidMount() {
-        let url = `http://localhost:8900/restaurantdetails/${this.props.match.params.id}`;
+        let url = `http://localhost:8900/restaurantdetail/${this.props.match.params.id}`;
 
         fetch(url, { method: 'GET' })
             .then(res => res.json())
