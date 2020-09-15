@@ -9,7 +9,6 @@ import axios from 'axios';
 
 
 const detailsUrl = "http://localhost:8900/restaurantlist";
-const restdetailUrl = "http://localhost:8900/restaurantlist";
 class Details extends Component {
     constructor(props) {
         super(props)
@@ -29,7 +28,7 @@ class Details extends Component {
         let cusineparam, lcostparam, hcostparam;
         let cityId = sessionStorage.getItem("city");
         let mealId = sessionStorage.getItem("meal");
-        let restUrl = `${restdetailUrl}/${cityId}/${mealId}?sort=${this.state.sort}`;
+        let restUrl = `${detailsUrl}/${cityId}/${mealId}?sort=${this.state.sort}`;
 
         if (this.state.cusineId == "")
             cusineparam = "";
